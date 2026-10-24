@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="da">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>McDeal – Spil &amp; Vind</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="top">
+      <div style="max-width: 3.5rem; display: flex; align-items: center; justify-content: center;">
+        <img style="width: 100%; height: auto;"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg?utm_source=da.wikipedia.org&utm_campaign=index&utm_content=original">
+      </div>
+      <div class="row">
+
+        <div class="qr">
+          ▦
+        </div>
+        <button class="pill">
+          407 point ›
+        </button>
+      </div>
+    </header>
+    <main id="home" class="screen">
+      <div class="welcomebackmessage">
+        <h1>Velkommen tilbage, Rolf!</h1>
+        <p>Sidste køb: 6 Frappe. - 28. Oktober 2026</p>
+      </div>
+      <section class="card">
+        <div class="img grey" data-icon="burger"></div>
+        <h1>Spring køen over!</h1>
+        <p>Husk at du kan bestille via app'en.</p>
+      </section>
+      <section class="card">
+        <div class="offer">
+          <img
+            src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202601_2842_MediumCaramelFrappe_1564x1564-1:product-header-mobile?wid=1313&hei=1313&dpr=off"
+            alt="Caramel Frappe"
+          >
+          <span class="badge">Nu med plastiksugerør</span>
+        </div>
+
+        <h2>En Frappe til dig!</h2>
+        <p>I anledning af din fødselsdag, kan du komme forbi din lokale McDonalds og få en gratis Frappe i XL.</p>
+        <button class="btn yellow-btn add-btn" data-add="BDAYFRAPPE">Tilføj til MyDeals</button>
+      </section>
+
+      <button class="card game-card" data-go="game">
+        <div class="img confetti"><span class="bounce" data-hand="sten"></span><span class="bounce flip"
+            data-hand="saks" style="animation-delay:.5s"></span></div>
+        <h2>Sten, saks eller papir?</h2>
+        <p>Vælg din hånd og se om du kan vinde lækre Deals.</p>
+      </button>
+    </main>
+
+    <main id="deals" class="screen hidden">
+      <h1>Mine deals</h1>
+      <div id="deals-list" class="deals-list"></div>
+    </main>
+
+    <main id="order" class="screen hidden">
+      <h1>Bestil</h1>
+      <section class="card">
+        <h2>Bestil og hent</h2>
+        <p>Vælg din restaurant, sammensæt din bestilling og hent den uden at stå i kø.</p>
+      </section>
+      <section class="card">
+        <h2>Dine favoritter</h2>
+        <p>Du har ingen favoritter endnu. Bestil noget, så dukker de op her.</p>
+      </section>
+    </main>
+
+    <main id="delivery" class="screen hidden">
+      <h1>McDelivery</h1>
+      <section class="card">
+        <h2>Få maden leveret</h2>
+        <p>Indtast din adresse og se, om McDelivery leverer, hvor du bor.</p>
+      </section>
+    </main>
+
+    <main id="more" class="screen hidden">
+      <h1>Mere</h1>
+      <section class="card">
+        <h2>Min profil</h2>
+        <p>Dine oplysninger og betalingsmetoder.</p>
+      </section>
+      <section class="card">
+        <h2>Hjælp</h2>
+        <p>Spørgsmål om ordrer, deals eller point.</p>
+      </section>
+    </main>
+
+    <main id="game" class="screen confetti hidden">
+      <button class="back" data-go="home" aria-label="Tilbage">‹</button>
+      <div class="center">
+        <h1>Vælg din hånd</h1>
+        <div class="row gap" id="hands"></div>
+        <p>Sten · Saks · Papir</p>
+      </div>
+    </main>
+
+    <main id="shaking" class="screen confetti center hidden">
+      <h1>Sten, saks, papir…</h1>
+      <div class="row gap"><span class="shake" id="p1"></span><b class="vs">VS</b><span class="flip"><span class="shake"
+            id="h1" style="animation-delay:.12s"></span></span></div>
+      <div id="count" class="count"></div>
+    </main>
+
+    <main id="result" class="screen center hidden">
+      <div class="row gap"><span class="pop" id="p2"></span><b class="vs">VS</b><span class="flip"><span class="pop"
+            id="h2"></span></span></div>
+      <div id="msg"></div>
+      <div class="row">
+        <button class="btn yellow-btn" data-go="game">SPIL IGEN</button>
+        <button class="btn" data-go="home">Til forsiden</button>
+      </div>
+    </main>
+
+    <nav class="nav">
+      <button class="active" data-go="home">Hjem</button><button data-go="deals">MyDeals <span id="deal-count"></span></button><button data-go="order">Bestil</button><button data-go="delivery">McDelivery</button><button data-go="more">Mere</button>
+    </nav>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
